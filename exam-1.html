@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam-1</title>
+</head>
+<body>
+    <script>
+
+        // Selection Sort
+        function Selection(){
+            let array = [12, 58, 45, 47, 26, 123, 7894, 159]
+            for(let i = 0; i < array.length; i++){
+                for(let j = i + 1; j < array.length; j++){
+                    if(array[i] > array[j]){
+                        let temp = array[j]
+                        array[j] = array[i]
+                        array[i] = temp
+                    }
+                }
+            }
+            return array
+        }
+        console.log("Selection Sort:", Selection());
+
+        // linear search
+        function Linear(){
+            let arr = [1, 5, 8, 45, 78, 156, 189, 487, 1458, 15, 59, 178]
+            let target = 487
+
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] === target){
+                    return i
+                }
+            }
+        }
+        console.log("Linear Search:", Linear());
+
+        // Queue All Operation
+        class Queue {
+            constructor(){
+                this.que = []
+                this.head = 0
+                this.tail = this.que.length
+                this.size = 6
+            }
+            headQ(){
+                console.log("Head:",this.que[this.head]);
+            }
+            tailQ(){
+                console.log("Tail:",this.que[this.que.length - 1]);
+            }
+            Add(val){
+                if (this.que.length < this.size) {
+                    this.que.push(val)
+                } else {
+                    console.log('Queue is Overflow');
+                }
+            }
+            Remove(){
+                if(this.que.length > 1){
+                    this.que.shift()
+                } else{
+                    console.log("Minimum Size Reached");
+                }
+            }
+            Print(){
+                console.log("Queue Element:",this.que);
+            }
+            isEmpty(){
+                if(this.que.size === 0){
+                    console.log("this Queue is Empty");
+                }
+            }
+        }
+        const que = new Queue();
+        que.Add(10);
+        que.Add(20);
+        que.Add(30);
+        que.Add(40);
+        que.headQ();
+        que.tailQ();
+        que.Print();
+
+        // Set with add operation and print all element
+        function Sets(){
+            const Result = new Set()
+            Result.add("Mango")
+            Result.add("Apple")
+            Result.add("Strabery")
+            Result.add("Watermelon")
+            Result.add("Blueberry")
+
+            const Res = Result.forEach(p =>{
+                console.log(p);
+            })
+        }
+        Sets()
+    </script>
+</body>
+</html>
